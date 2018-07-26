@@ -1,3 +1,7 @@
+
+/* Base Styling
+   ===================================================================== */
+
 html,
 body {
 	width: 100%;
@@ -6,12 +10,13 @@ body {
 
 body {
 	margin: 0;
-	font-family: "Anonymous Pro", sans-serif;
-	font-size: 24px;
-	line-height: 1.25;
+	font-family: Lato, sans-serif;
+	font-size: 20px;
+	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #3f3f3f;
+	color: #ebebeb;
 }
 
 a {
@@ -24,34 +29,175 @@ a:focus {
 	color: #64C6F4;
 }
 
+button {
+	background: none;
+	border: 0;
+	padding: 0;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: 1;
+	color: #79ce27;
+	cursor: pointer;
+}
+
+button:hover,
+button:focus {
+	color: #afe27d;
+}
+
+
+
+
+/* Components
+   ===================================================================== */
+
+/* Page Wrapper
+   --------------------------- */
+
 .c-pageWrapper {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	width: 100%;
 	height: 100%;
 }
 
+
+
+/* Content
+   --------------------------- */
+
 .c-content {
 	background: #2c2c2c;
 	max-width: 900px;
-	padding: 26px 32px;
+	margin: 30px;
+	padding: 16px 32px;
 	box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
 	0 2px 2px 0 rgba(0, 0, 0, 0.14),
 	0 1px 5px 0 rgba(0, 0, 0, 0.12);
 	border-radius: 3px;
 }
 
+.c-content--fixedWidth {
+	width: 100%;
+}
+
+
+
+/* header
+   --------------------------- */
+
+.c-header {
+	background: #2f2f2f;
+	margin: 0 -32px;
+	padding: 8px 32px;
+	font-family: "Anonymous Pro", sans-serif;
+	line-height: 1.25;
+}
+
+.c-header--noBackground {
+	background: none;
+}
+
+
+
+/* Footer
+   --------------------------- */
+
+.c-footer {
+	background: #2f2f2f;
+	margin: 32px -32px 0;
+	padding: 0 32px;
+	font-family: "Anonymous Pro", sans-serif;
+	line-height: 1.25;
+}
+
+
+
+/* My Name
+   --------------------------- */
+
 .c-name {
 	margin: 0;
 	font-size: 24px;
-	line-height: 1;
 	color: #79CE27;
 }
 
+
+
+/* My Title
+   --------------------------- */
+
 .c-title {
-	margin: 0;
+	margin: 0 0 8px;
 	color: #bbb;
 	font-size: 24px;
-	font-weight: 400;
+}
+
+
+
+/* Page Content
+   --------------------------- */
+
+.c-pageContent {
+	padding-top: 24px;
+}
+
+
+
+/* Page Title
+   --------------------------- */
+
+.c-pageTitle {
+	position: relative;
+	margin-bottom: 24px;
+	color: #bbb;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+
+
+/* Project List
+   --------------------------- */
+
+.c-projectList {
+	position: relative;
+	color: #777;
+}
+
+.c-projectList__item {
+	position: relative;
+	padding-left: 14px;
+	margin-bottom: 24px;
+	font-size: 18px;
+}
+
+.c-projectList__item:before {
+	position: absolute;
+	content: '-';
+	font-size: 20px;
+	left: 0;
+	top: 0;
+}
+
+.c-projectList__projectLink {
+	font-size: 20px;
+	color: #79ce27;
+}
+
+.c-projectList__projectLink:hover,
+.c-projectList__projectLink:focus {
+	color: #afe27d;
+}
+
+.c-projectList__projectInfo {
+	/*display: none;*/
+	font-size: 18px;
+	color: #999;
+}
+
+.c-projectList__moreInfoButton.is-active + .c-projectList__projectInfo {
+	display: block;
 }
